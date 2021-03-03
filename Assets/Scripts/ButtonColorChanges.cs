@@ -18,13 +18,19 @@ public class ButtonColorChanges : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if(_isRed == true)
+        if(other.tag == "Hands")
         {
-            colorLogic.BlueColor();
-        }
-        else
-        {
-            colorLogic.RedColor();
+            if (_isRed == true)
+            {
+                colorLogic.BlueColor();
+                _isRed = false;
+            }
+            else
+            {
+                colorLogic.RedColor();
+                _isRed = true;
+            }
+
         }
 
 
